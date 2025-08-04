@@ -1,0 +1,313 @@
+/* --- CÀI ĐẶT CƠ BẢN VÀ BIẾN --- */
+:root {
+  --primary-color: #8e44ad;
+  --dark-color: #000000;
+  --light-color: #ffffff;
+  --text-gray: #bababa;
+  --font-body: 'Poppins', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Cuộn trang mượt mà */
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--light-color);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block; /* Loại bỏ khoảng trống thừa dưới ảnh */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1, h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-align: center;
+}
+
+/* --- CONTAINER CHUNG --- */
+.home {
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden; /* Tránh tràn nội dung */
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex; /* Dùng Flexbox để căn chỉnh */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%; /* Dùng đơn vị rem và % linh hoạt */
+  height: 92px;
+  background: var(--light-color);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+  height: 72px;
+  width: auto;
+}
+
+.menu-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+.menu-icon:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+  opacity: 0.8;
+} 
+
+/* --- HERO SECTION (Banner) --- */
+.hero-section {
+  position: relative; /* Vị trí tham chiếu cho text */
+  height: 15vh; /* Chiều cao bằng 35% chiều cao màn hình */
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light-color);
+}
+
+.hero-section .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh nền che phủ toàn bộ */
+  z-index: -1; /* Đưa ảnh ra sau chữ */
+}
+
+.hero-section h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem); /* Font chữ co giãn */
+  padding: 0 1rem;
+}
+
+/* --- SERVICE SECTION --- */
+.service-section {
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.service-section h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin-bottom: 3rem;
+  color: var(--dark-color);
+}
+
+.service-grid {
+  display: grid; /* Dùng Grid để tạo lưới dịch vụ */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Cột tự động co giãn */
+  gap: 2rem; /* Khoảng cách giữa các item */
+}
+
+.service-item {
+  background: var(--primary-color);
+  border-radius: 20px;
+  padding: 2rem 1rem;
+  color: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-10px); /* Hiệu ứng khi di chuột */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.service-icon {
+  width: 60px;
+  height: auto;
+}
+
+.service-name {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* --- ABOUT US SECTION --- */
+.about-us-section {
+    display: grid;
+    grid-template-columns: 1fr; /* Mặc định 1 cột */
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 5%;
+}
+
+.about-us-content {
+    background: rgba(217, 217, 217, 0.43);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.about-us-content h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 1rem;
+}
+
+.about-us-content p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.about-us-image {
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* --- SALE SECTION --- */
+.sale-section {
+  padding: 4rem 5%;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.sale-section h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.sale-section p {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 200;
+}
+
+/* --- BUTTON CHUNG --- */
+.button {
+  display: inline-block;
+  background: var(--dark-color);
+  color: var(--light-color);
+  padding: 0.8rem 2.5rem;
+  border-radius: 15px;
+  border: 1px solid var(--dark-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* --- FOOTER --- */
+.footer {
+  /* position: relative; Đặt position relative để lớp phủ hoạt động đúng */
+  color: var(--light-color);
+  padding: 4rem 5% 2rem 5%; /* Tăng padding để có thêm không gian cho nền */
+  
+  /* --- PHẦN THÊM VÀO --- */
+  background-color: #2c3e50; /* Màu nền dự phòng nếu ảnh không tải được */
+  background-image: 
+    /* Lớp phủ màu đen bán trong suốt (thay đổi 0.7 để tăng/giảm độ tối) */
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    /* Đường dẫn đến ảnh nền của bạn */
+    url('./background1.png');
+  
+  background-size: cover; /* Đảm bảo ảnh nền phủ kín toàn bộ footer */
+  background-position: center; /* Căn giữa ảnh nền */
+  background-repeat: no-repeat; /* Không lặp lại ảnh nền */
+  /* --- KẾT THÚC PHẦN THÊM VÀO --- */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem; /* Tăng khoảng cách cho thoáng hơn */
+  margin-bottom: 3rem;
+  position: relative; /* Đảm bảo nội dung nằm trên lớp phủ */
+  z-index: 2;
+}
+
+.footer-column h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--light-color); /* Đảm bảo tiêu đề màu trắng */
+}
+
+.footer-column ul li {
+  margin-bottom: 0.7rem;
+  color: var(--text-gray);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-column ul li a {
+    color: var(--text-gray);
+    transition: color 0.3s ease;
+}
+.footer-column ul li a:hover {
+    color: var(--light-color);
+}
+
+.footer-column img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  color: var(--text-gray);
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Làm mờ đường kẻ */
+  position: relative;
+  z-index: 2;
+}
+/* --- MEDIA QUERIES (Responsive Design) --- */
+
+/* Cho Tablet và Desktop nhỏ */
+@media (min-width: 768px) {
+    .about-us-section {
+        /* Chuyển sang layout 2 cột trên màn hình lớn */
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-us-content {
+        /* Đặt nội dung text bên trái, ảnh bên phải */
+        order: 1;
+    }
+    .about-us-image {
+        order: 2;
+    }
+}
